@@ -14,18 +14,19 @@
 ActiveRecord::Schema.define(version: 20140509161834) do
 
   create_table "endorsements", force: true do |t|
+    t.integer  "skill_id"
     t.integer  "endorser_id"
     t.integer  "endorsee_id"
-    t.string   "skill"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "endorsements", ["endorsee_id"], name: "index_endorsements_on_endorsee_id"
   add_index "endorsements", ["endorser_id"], name: "index_endorsements_on_endorser_id"
+  add_index "endorsements", ["skill_id"], name: "index_endorsements_on_skill_id"
 
   create_table "posts", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.string   "category"
     t.string   "date"
     t.string   "title"
@@ -34,12 +35,12 @@ ActiveRecord::Schema.define(version: 20140509161834) do
     t.datetime "updated_at"
   end
 
-  add_index "posts", ["owner_id"], name: "index_posts_on_owner_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "reviews", force: true do |t|
     t.integer  "post_id"
-    t.integer  "post_owner_id"
     t.integer  "reviewer_id"
+    t.integer  "reviewee_id"
     t.string   "title"
     t.text     "text"
     t.integer  "rating"
@@ -48,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140509161834) do
   end
 
   add_index "reviews", ["post_id"], name: "index_reviews_on_post_id"
-  add_index "reviews", ["post_owner_id"], name: "index_reviews_on_post_owner_id"
+  add_index "reviews", ["reviewee_id"], name: "index_reviews_on_reviewee_id"
   add_index "reviews", ["reviewer_id"], name: "index_reviews_on_reviewer_id"
 
   create_table "skills", force: true do |t|
