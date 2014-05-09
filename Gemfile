@@ -25,12 +25,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Foundation for SCSS styling
 gem 'foundation-rails'
 
-# Foundation icons
-gem 'foundation-icons-sass-rails'
-
-# Foundation helper
-gem 'foundation_rails_helper'
-
 # Devise for authentication
 gem 'devise'
 
