@@ -38,10 +38,10 @@ class UsersController < ApplicationController
       @posts = Post.where(owner_id: current_user.id)
 
       # User's reviews
-      @reviewers = Review.where(reviewer_id: current_user.id)
-      @reviewer_id = []
-      @reviewers.each do |review|
-        @reviewer_id.push(review.reviewer_id)
+      @reviews = Review.where(reviewer_id: current_user.id)
+      @review_id = []
+      @reviews.each do |review|
+        @review_id.push(review.reviewer_id)
       end
     else 
       redirect_to users_path

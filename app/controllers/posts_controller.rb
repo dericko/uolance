@@ -6,6 +6,9 @@ class PostsController < ApplicationController
   def new
   	if user_signed_in?
   		@post = Post.new
+      @review = Review.new
+      @review.post_id = @post.id
+      @review.post_owner_id = @post.owner_id
   	else
   		redirect_to new_user_session_path
   	end
@@ -51,12 +54,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = post.find(params[:id])
-    @review = Review.new
+    @post = Post.find(params[:id])
   end
 
   def destroy
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end

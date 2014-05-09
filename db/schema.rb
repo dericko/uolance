@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509073214) do
+ActiveRecord::Schema.define(version: 20140509161834) do
 
   create_table "endorsements", force: true do |t|
     t.integer  "endorser_id"
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 20140509073214) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "year"
+    t.string   "phone"
+    t.boolean  "is_org"
+    t.string   "org_name"
+    t.integer  "posts_id"
+    t.integer  "reviews_id"
+    t.integer  "skills_id"
+    t.integer  "endorsements_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

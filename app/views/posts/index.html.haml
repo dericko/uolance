@@ -1,2 +1,14 @@
 / View all listings
-%p Find me in app/views/posts/index.html.haml
+%table
+	%thead
+		%tr
+			%th title
+			%th date
+			%th description
+			%th owner
+	%tbody
+	- @posts.each do |post|
+		%tr
+			%td= link_to post.title, post_path(post.id)
+			%td= post.date
+			%td= post.description

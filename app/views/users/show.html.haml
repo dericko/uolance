@@ -1,3 +1,16 @@
-/ If this user, user dashboard
-/ Else User profile page (public)
-%p Find me in app/views/users/show.html.haml
+%div
+  %h3
+    Username: #{@user.first_name}
+    %p
+      Email: #{@user.email}
+%br
+  - @posts.each do |post|
+    %h3= link_to post.title, post_path(post.id)
+    %p
+      Message: #{post.description}
+
+  - @reviews.each do |review|
+    %h3= link_to review.title, review_path(review.id)
+    %p
+      Message: #{review.description}
+

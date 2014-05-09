@@ -12,40 +12,36 @@
     = csrf_meta_tag
 
   %body
+    %div.contain-to-grid.sticky
+      %nav.top-bar{"data-topbar" => "", "data-options"=>"sticky-on large"}
+        %ul.title-area
+          %li.name
+            %h1
+              %a{:href=>root_path} uolance
+        %section.top-bar-section
+          / Right Nav Section
+          %ul.right
+            - if user_signed_in?
+              %li
+                %a{href: user_path(:user_id)}Dashboard
+              %li
+                %a{href: edit_user_registration_path} Account
+              %li= link_to('Logout', destroy_user_session_path, :method => :delete)
+              %li.active
+                %a{href: new_post_path} LIST A JOB
+            - else
+              %li.active
+                = link_to('Login', new_user_session_path)
+          / Left Nav Section
+          %ul.left
+            %li.has-form
+              %div.row.collapse
+                %div.medium-12.small-9.columns
+                  %input{:type=>"text", :placeholder=>"Search"}
+            %li.alert
+              %a{href: posts_path} Browse
 
-    %nav.top-bar{"data-topbar" => ""}
-      %ul.title-area
-        %li.name
-          %h1
-            %a{:href=>root_path} uolance
-      %section.top-bar-section
-        / Right Nav Section
-        %ul.right
-          - if user_signed_in?
-            %li
-              %a{href: posts_path} All Posts
-            %li.has-dropdown
-              %a{href: user_path(:user_id)} User
-              %ul.dropdown
-                %li
-                  %a{href: edit_user_registration_path} Account
-                %li
-                  = link_to('Logout', destroy_user_session_path, :method => :delete)
-          - else
-            %li
-              = link_to('Login', new_user_session_path)
-          %li.active
-            %a{href: new_post_path} LIST A JOB
-        / Left Nav Section
-        %ul.left
-          %li.has-form
-            %div.row.collapse
-              %div.medium-8.small-9.columns
-                %input{:type=>"text", :placeholder=>"Search"}
-              %div.medium-4.small-3.columns
-                %a.alert.button.expand{:href=>"#"}O
-
-
+  .small-10.small-offset-1
     = yield
 
 
