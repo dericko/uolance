@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'foundation-rails'
 
 # Devise for authentication
-gem 'devise'
+gem 'devise' '3.0'
 
 # Generated html defaults to .haml instead of .erb
 gem 'haml-rails'
