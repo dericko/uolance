@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  endorser_id: 
+  endorsee_id: 
+  skill: MyString
+
+two:
+  endorser_id: 
+  endorsee_id: 
+  skill: MyString

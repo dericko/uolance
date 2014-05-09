@@ -25,6 +25,21 @@ gem 'coffee-rails', '~> 4.0.0'
 # Foundation for SCSS styling
 gem 'foundation-rails'
 
+# Foundation icons
+gem 'foundation-icons-sass-rails'
+
+# Foundation helper
+gem 'foundation_rails_helper'
+
+# Devise for authentication
+gem 'devise'
+
+# Generated html defaults to .haml instead of .erb
+gem 'haml-rails'
+
+# Add image upload capabilities
+gem 'filepicker-rails'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

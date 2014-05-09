@@ -26,3 +26,18 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+Gems used:
+-Devise (authentication)
+-haml (html formatting)
+-foundation (styling)
+-cancan (authorization)
+-mailboxer (internal messaging)
+-filepicker (user images)
+
+Models:
+-User (freelancer or organization)
+-Post (a job listing, has_poster, has_responder, has_reviewer)
+-Review (poster reviews responder, responder reviews post)
+-Endorsement (user endorses user)
