@@ -2,12 +2,12 @@ ShutterLink::Application.routes.draw do
 
   devise_for :users
   
+  get "welcome/index"
   resources :users
   resources :posts
   resources :reviews
   resources :skills
   resources :endorsements
-  resources :welcome
 
   post "search", to: "application#search"
 

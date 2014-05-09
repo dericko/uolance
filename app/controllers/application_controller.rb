@@ -5,18 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
 
-  def search
-    case params[:type]
-      when "title", "category"
-        @posts = Post.where(params[:type] + " LIKE ?", "%" + params[:search]+"%")
-        render 'posts/index'
-      when "name", "email"
-        @users = User.where(params[:type] + " LIKE ?", "%" + params[:search]+"%")
-        render 'users/index'
-      else
-        render 'none'
-      end
-  end
+  
 
   protected
 
