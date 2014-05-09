@@ -11,6 +11,7 @@ end
 # Use postgresql as the database for Active Record in production
 group :production do 
 	gem 'pg' 
+	gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
@@ -26,7 +27,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'foundation-rails'
 
 # Devise for authentication
-gem 'devise' '3.0'
+gem 'devise'
 
 # Generated html defaults to .haml instead of .erb
 gem 'haml-rails'
