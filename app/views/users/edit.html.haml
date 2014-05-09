@@ -1,2 +1,53 @@
 / User account page (private)
 %p Find me in app/views/users/edit.html.haml
+
+.form
+  = form_for(@post) do |f|
+    .row
+      .small-9
+        .row
+          .small-3.columns
+            %label.right.inline{for: "right-label"} First Name
+          .small-9.columns
+           	= f.text_field :first_name
+    .row
+      .small-9
+        .row
+          .small-3.columns
+            %label.right.inline{for: "right-label"} Last Name
+          .small-9.columns
+            = f.text_field :last_name
+    .row
+      .small-9
+        .row
+          .small-3.columns
+            %label.right.inline{for: "right-label"} First Name
+          .small-9.columns
+            = f.text_field :title
+    .row
+      .small-9
+        .row
+          .small-3.columns
+            %label.right.inline{for: "right-label"} Date
+          .small-9.columns
+            = f.text_field :date
+    .row
+      .small-9
+        .row
+          .small-3.columns
+            %label.right.inline{for: "right-label"} Category
+          .small-9.columns
+            = f.select :category, options_for_select([["Photoshoot", "Photoshoot"],["Event", "Event"],["Design","Design"]])
+    .row
+      .small-9
+        .row
+          .small-3.columns
+            %label.right.inline{for: "right-label"} Description
+          .small-9.columns
+            = f.text_field :description
+    .row
+      .field
+        = f.hidden_field :owner_id, :value => current_user.id
+    
+    .row
+      = f.submit "Continue"
